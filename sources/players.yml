@@ -1,0 +1,61 @@
+players:
+  '2':
+    ==: Player
+    id: 2
+    lastModified: 1458429647171
+    dateCreated: 1458429129553
+    world: null
+    x: null
+    y: null
+    z: null
+    pitch: null
+    yaw: null
+    name: Dragon_DLV
+  '3':
+    ==: Player
+    id: 3
+    lastModified: 1458429647171
+    dateCreated: 1458429232738
+    world: null
+    x: null
+    y: null
+    z: null
+    pitch: null
+    yaw: null
+    name: Agentred100
+  '4':
+    ==: Player
+    id: 4
+    lastModified: 1458429647172
+    dateCreated: 1458429333396
+    world: null
+    x: null
+    y: null
+    z: null
+    pitch: null
+    yaw: null
+    name: Melium
+  '5':
+    ==: Player
+    id: 5
+    lastModified: 1458429647172
+    dateCreated: 1458429347282
+    world: null
+    x: null
+    y: null
+    z: null
+    pitch: null
+    yaw: null
+    name: jugglingman456
+  '6':
+    ==: Player
+    id: 6
+    lastModified: 1458429647172
+    dateCreated: 1458429558587
+    world: null
+    x: null
+    y: null
+    z: null
+    pitch: null
+    yaw: null
+    name: SimonOrJ

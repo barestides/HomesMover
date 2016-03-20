@@ -7,9 +7,18 @@ def simple_home_reader():
     contents = original_db.read()
     lines = contents.splitlines()
     homes = []
+    permissions_file = open('sources/permissions.yml', 'r')
+    permissions_str = permissions_file.read()
+    permissions_lines = permissions_str.splitlines()
+
+    players = []
+    for line in permissions_lines:
+        if re.search('      name:.*', line):
+            players.append(line[12:])
+
     for i, line in enumerate(lines):
         if not line.startswith(' ') and not line.endswith('{}'):
-            player = line[:-1]
+            player = fix_caps(line[:-1], players)
             default_home = True
             if re.search('^  \S.*', lines[i + 1]):
                 name = 'null'
@@ -48,9 +57,16 @@ def create_hsp_output(homes_list_of_tuples):
             i+1) + '\n    lastModified: 1458267847321\n    dateCreated: 1458265677106\n    world: ' + sh_home[
                    'world'] + '\n    x: ' + sh_home['x'] + '\n    y: ' + sh_home['y'] + '\n    z: ' + sh_home[
                    'z'] + '\n    pitch: 11.550003\n    yaw: -200.25002\n    name: ' + sh_home[
-                   'name'] + '\n    player_name: ' + sh_home['player'] + '\n    updatedBy: ' + sh_home[
-                   'player'] + '\n    bedHome: false\n    defaultHome: ' + str(sh_home['default_home']).lower()
+                   'name'] + '\n    player_name: ' + str(sh_home['player']) + '\n    updatedBy: ' + str(sh_home[
+                   'player']) + '\n    bedHome: false\n    defaultHome: ' + str(sh_home['default_home']).lower()
+
         hsp_output.write(home)
     hsp_output.close()
+
+
+def fix_caps(lower_case, correct_names):
+    for correct_name in correct_names:
+        if str(correct_name).lower() == lower_case.lower():
+            return str(correct_name)
 
 simple_home_reader()

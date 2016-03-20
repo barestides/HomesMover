@@ -26,7 +26,9 @@ homes:
     z: 80.19164232742216
     pitch: 11.550003
     yaw: -200.25002
-    name: null
+    name: nullpyramid
+
+
     player_name: djangowinner
     updatedBy: djangowinner
     bedHome: false
